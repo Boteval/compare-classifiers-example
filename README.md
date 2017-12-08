@@ -2,9 +2,17 @@
 
 Example usage of the compare-classifiers library
 
-## Usage
+### Usage without leiningen
 
-Add the following dependency in project.clj:
+To run an uberjar created from this project, without requiring leiningen:
+
+0. place the uberjar in some directory
+1. Place the input files mentioned in (2) above, in an `input` subdirectory
+2. run: `java -jar <uberjar-name>`
+
+## Usage with leiningen
+
+0. Clone this repo
 
 1. [Install leiningen](https://leiningen.org/#install)
 
@@ -14,9 +22,8 @@ Add the following dependency in project.clj:
 
         2.2 a mapping file from header names used in your CSV → to names used by this program. see sample mapping file below.
 
-3. from a terminal session, run: `lein run`
+3. Either: in a terminal session, run: `lein run`
 
-Outputs will be generated under the directory "output".
 
 ## Sample Mapping file
 
