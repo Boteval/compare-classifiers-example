@@ -144,6 +144,21 @@
 
   " drive evaluation on two evaluation methods sharing some of their dimensions "
 
+   (write-evaluation-result
+       "intersection-over-union"
+       (evaluate-on-dimensions
+         (partial trace-write "intersection-over-union")
+         { :evaluator-spec intersection-over-union
+           :evaluation-config-base
+             {:objects-tagging objects-tagging
+              :gold gold
+              :n 3}
+           :dimensions
+             [#_in-out-corpus
+              in-out-domain
+              classifiers-dim
+              cutoff]}))
+
      (write-evaluation-result
        "accuracy-at"
        (evaluate-on-dimensions
@@ -153,27 +168,9 @@
              {:objects-tagging objects-tagging
               :gold gold}
            :dimensions
-             [in-out-corpus
+             [#_in-out-corpus
               in-out-domain
               tags-dim
               at-n-dim
               classifiers-dim
-              cutoff]}))
-
-     (write-evaluation-result
-       "Godbole-accuracy"
-       (evaluate-on-dimensions
-         (partial trace-write "Godbole-accuracy")
-         { :evaluator-spec Godbole-accuracy
-           :evaluation-config-base
-             {:objects-tagging objects-tagging
-              :gold gold
-              :n 3}
-           :dimensions
-             [in-out-corpus
-              in-out-domain
-              classifiers-dim
               cutoff]})))
-
-
-

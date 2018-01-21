@@ -13,7 +13,7 @@
   :test-selectors {:default (complement :unit) ; https://github.com/technomancy/leiningen/blob/983847276d12fcdac7a5b5eabbd5dfcb926087d7/src/leiningen/test.clj#L172
                    :all (constantly true)}
 
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
                  [org.boteval.nlueval "0.0.1"]
 
                  ;; sql wrangling stack
